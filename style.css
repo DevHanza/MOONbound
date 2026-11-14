@@ -1,5 +1,6 @@
 :root {
   --blue: #3350ff;
+  --blue-soft: #8c9dff; /* readable blue for small text on black */
   --black: #000;
   --white: #fff;
   --muted: rgba(255, 255, 255, 0.75);
@@ -165,6 +166,60 @@ h2 { font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.25; }
 .mark { width: 28px; height: 28px; flex: none; display: grid; place-content: center; border-radius: 50%; background: var(--blue); color: var(--white); font-size: 0.8rem; }
 .mark--no { background: var(--white); color: var(--blue); }
 
+/* ---------- About page ---------- */
+.hero--short { min-height: 34rem; }
+.intro { display: grid; gap: 1rem; max-width: 42rem; margin-bottom: 3.5rem; }
+.intro p { color: rgba(255, 255, 255, 0.9); }
+
+.team { grid-template-columns: repeat(3, 1fr); }
+.member { overflow: hidden; border: 2px solid rgba(255, 255, 255, 0.1); border-radius: 16px; background: rgba(255, 255, 255, 0.06); transition: border-color 0.3s; }
+.member:hover { border-color: var(--blue); }
+.member > img { width: 100%; height: auto; aspect-ratio: 380 / 300; object-fit: cover; transition: scale 0.6s var(--ease); }
+.member:hover > img { scale: 1.05; }
+.member__body { position: relative; padding: 1rem; background: #0f0f0f; }
+.member h3 { font: 500 1.75rem/1.2 var(--display); }
+.member__role { margin: 0.25rem 0 1.25rem; color: var(--blue-soft); font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.member ul { display: grid; gap: 0.625rem; }
+.member li a { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 1rem; color: var(--muted); transition: color 0.2s; }
+.member li a:hover { color: var(--white); }
+.member li span { width: 28px; height: 28px; flex: none; display: grid; place-content: center; border-radius: 6px; background: rgba(255, 255, 255, 0.1); font-size: 0.8rem; color: var(--white); }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 2rem; margin: 0 0 4rem; padding: 2.5rem 0; border-block: 1px solid rgba(255, 255, 255, 0.2); }
+.stats dd { margin: 0; font: 800 clamp(2.5rem, 4.500vw, 4rem)/1 var(--display); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: var(--blue-soft); }
+.stats dd span { color: var(--white); }
+.stats dt { margin-top: 0.75rem; max-width: 15rem; font-size: 1rem; color: var(--muted); }
+.stats > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; }
+
+.sources { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); gap: 1.5rem; }
+.source { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 15px; transition: border-color 0.3s, box-shadow 0.4s; }
+.source:hover { border-color: var(--blue); box-shadow: 0 20px 60px -25px rgba(51, 80, 255, 0.7); }
+.source header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.75rem; }
+.source .card__icon { width: 52px; height: 52px; font-size: 1.3rem; margin: 0; }
+.source__no { font: 800 2.5rem/1 var(--display); color: rgba(255, 255, 255, 0.15); transition: color 0.3s; }
+.source:hover .source__no { color: var(--blue-soft); }
+.source h3 { font: 600 1.5rem/1.25 var(--display); }
+.source__from { font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--blue-soft); }
+.source > p:not(.source__from) { font-size: 1.0625rem; color: var(--muted); }
+.source .chips { margin-top: auto; padding-top: 0.75rem; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chips li { padding: 0.3rem 0.8rem; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 99px; font-size: 0.8125rem; color: rgba(255, 255, 255, 0.9); }
+
+details { font-size: 0.9375rem; color: var(--muted); }
+summary { width: fit-content; cursor: pointer; color: var(--white); text-decoration: underline; text-decoration-color: var(--blue); text-underline-offset: 4px; }
+details ul { display: grid; gap: 0.375rem; margin-top: 0.75rem; padding-left: 1rem; border-left: 2px solid var(--blue); }
+code { font: 0.875em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--white); overflow-wrap: anywhere; }
+
+.credits { display: grid; grid-template-columns: 1.400fr 1fr; gap: 1.5rem; align-items: start; }
+.box { margin: 0; padding: 2rem 1.5rem; border-radius: 16px; background: var(--panel); font-size: 1.0625rem; }
+dl.box { display: grid; gap: 1.25rem; }
+dl.box > div { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; }
+.box dt { font: 700 1.125rem var(--display); text-transform: uppercase; }
+.box dd { margin: 0; color: var(--muted); }
+.box h3 { margin: 1.75rem 0 0.75rem; font: 700 1.125rem var(--display); text-transform: uppercase; }
+.box h3:first-child { margin-top: 0; }
+.box p { color: var(--muted); }
+
 /* ---------- CTA ---------- */
 .cta { position: relative; overflow: hidden; border-top: 2px solid rgba(255, 255, 255, 0.25); padding: 8rem 0 15rem; }
 .cta__bg {
@@ -195,7 +250,8 @@ h2 { font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.25; }
   body { font-size: 1.0625rem; }
   .section { padding: 4rem 0; }
   .section__head { margin-bottom: 2.5rem; }
-  .split__inner, .compare { grid-template-columns: 1fr; }
+  .split__inner, .compare, .credits { grid-template-columns: 1fr; }
+  .team { grid-template-columns: repeat(2, 1fr); }
   .split__inner { gap: 2.5rem; }
   .split--reverse .media { order: -1; }
   .split__text .btn { margin-top: 1rem; }
@@ -222,9 +278,13 @@ h2 { font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.25; }
   .hero__scroll { justify-content: center; font-size: 0.875rem; letter-spacing: 0.08em; }
   .btn--lg { height: 3.5rem; font-size: 1.125rem; justify-content: center; }
 
+  .team { grid-template-columns: 1fr; }
   .card { min-height: 0; padding: 1.25rem; }
   .card h3 { margin-top: 2rem; font-size: 1.25rem; }
   .panel { padding: 1.5rem 1.25rem; }
+  dl.box > div { grid-template-columns: 1fr; gap: 0.25rem; }
+  .intro { margin-bottom: 2.5rem; }
+  .stats { gap: 1.75rem; margin-bottom: 2.5rem; }
   .panel h3 { font-size: 1.375rem; }
   .panel li { font-size: 1rem; gap: 0.75rem; }
   .cta__inner, .section__head { flex-direction: column; align-items: flex-start; }

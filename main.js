@@ -23,6 +23,7 @@ onScroll();
 // Animations: only when GSAP loaded and the visitor has not asked for reduced motion.
 if (window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
+  gsap.config({ nullTargetWarn: false });
 
   gsap.matchMedia().add("(prefers-reduced-motion: no-preference)", () => {
     const ease = "power3.out";
@@ -70,6 +71,14 @@ if (window.gsap && window.ScrollTrigger) {
     gsap.utils.toArray("[data-media]").forEach((el) =>
       replay(gsap.from(el, { clipPath: "inset(100% 0 0 0 round 24px)", scale: 0.92, duration: 1.3, ease: "power4.out", paused: true }), el)
     );
+
+    // Numbers count up from zero
+    gsap.utils.toArray("[data-count]").forEach((el) => {
+      const decimals = (el.dataset.count.split(".")[1] || "").length;
+      const n = { v: 0 };
+      const show = () => (el.textContent = n.v.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals }));
+      replay(gsap.to(n, { v: +el.dataset.count, duration: 1.8, ease: "power2.out", paused: true, onUpdate: show }), el);
+    });
 
     // Horizon rises as the last section scrolls in
     gsap.from(".cta__bg", {
