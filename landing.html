@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lunar Landing — MOONbound</title>
+  <meta name="description" content="What it takes to land on the Moon, and why the Sun and the Earth in the sky decide where. Facts, a lunar-day animation and a timeline of landings.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/hero-moon.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="MOONbound home"><img src="assets/logo.svg" alt="MOONbound" width="212" height="30"></a>
+      <nav class="nav__links" aria-label="Main">
+        <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="landing.html" aria-current="page">Lunar Landing</a></li><li><a href="#history">Timeline</a></li></ul>
+      </nav>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="menu" id="menu" aria-label="Main" inert>
+    <ul class="menu__list"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="landing.html" aria-current="page">Lunar Landing</a></li><li><a href="#history">Timeline</a></li></ul>
+  </nav>
+
+  <main id="top">
+
+    <section class="hero hero--short">
+      <div class="hero__bg"><img src="assets/hero-moon.jpg" alt="" width="1613" height="1280"></div>
+      <div class="container hero__content">
+        <h1 class="hero__title"><span class="line"><span>Landing on the Moon</span></span></h1>
+        <p class="hero__sub">Why the Sun and the Earth in the lunar sky decide where we land.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="intro" data-reveal-group>
+          <h2>The short version</h2>
+          <p>Landing on the Moon is only the first problem. A lander then has to stay powered, stay warm and stay in touch, and all three depend on one thing: where the Sun and the Earth sit above the horizon at that spot, on that day.</p>
+        </div>
+        <dl class="stats" data-reveal-group>
+          <div><dt>crewed landings, all by Apollo between 1969 and 1972</dt><dd><span data-count="6">6</span></dd></div>
+          <div><dt>people have walked on the Moon</dt><dd><span data-count="12">12</span></dd></div>
+          <div><dt>of lunar rock and soil brought back by Apollo</dt><dd><span data-count="382">382</span> kg</dd></div>
+          <div><dt>one-way radio delay between the Moon and Earth</dt><dd><span data-count="1.3">1.3</span> s</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="factors">
+      <div class="container">
+        <div class="intro" data-reveal-group>
+          <h2>Three things decide a landing</h2>
+          <p>Mission planners weigh many things. These three are the ones MOONbound helps you compare.</p>
+        </div>
+        <div class="sources sources--three" data-reveal-group>
+          <article class="source">
+            <header><span class="card__icon"><i data-lucide="sun" class="icon"></i></span><span class="source__no">01</span></header>
+            <h3>Sunlight</h3>
+            <p class="source__from">Power and heat</p>
+            <p>A lunar day lasts about 29.5 Earth days: roughly two weeks of sunlight, then two of night. Surfaces swing from about 127 °C in sunlight to −173 °C in the dark, so a lander must finish its work in daylight or survive the cold.</p>
+            <p>The Moon’s axis is tilted only about 1.5°, so near the poles the Sun skims the horizon. Some ridges there stay lit for most of the year, while the floors of deep craters never see the Sun.</p>
+            <ul class="chips" aria-label="Related to"><li>Solar power</li><li>Temperature</li><li>Shadows</li></ul>
+          </article>
+          <article class="source">
+            <header><span class="card__icon"><i data-lucide="earth" class="icon"></i></span><span class="source__no">02</span></header>
+            <h3>Earth in the sky</h3>
+            <p class="source__from">Radio contact</p>
+            <p>The Moon always shows Earth the same face, so from the near side Earth hangs in almost the same spot in the sky and a lander has a direct radio line home, about 1.3 seconds away.</p>
+            <p>It is not perfectly still: the Moon’s slow wobble, called libration, shifts Earth by several degrees. Near the poles Earth sits low and hills can hide it, and on the far side it never rises, so a relay satellite is needed.</p>
+            <ul class="chips" aria-label="Related to"><li>Direct-to-Earth</li><li>Libration</li><li>Relay satellites</li></ul>
+          </article>
+          <article class="source">
+            <header><span class="card__icon"><i data-lucide="mountain" class="icon"></i></span><span class="source__no">03</span></header>
+            <h3>The ground</h3>
+            <p class="source__from">Slopes, rocks and craters</p>
+            <p>Gentle slopes and few boulders decide where a lander can stand. Orbiters such as NASA’s LRO map the ground to within metres, and the Apollo sites were picked from such images and from earlier robotic scouts.</p>
+            <p>The terrain also draws the skyline. A ridge a few kilometres away can shade the Sun or block Earth, which is why MOONbound scans the horizon around every site.</p>
+            <ul class="chips" aria-label="Related to"><li>Slope</li><li>Boulders</li><li>Skyline</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="horizons">
+      <div class="container">
+        <div class="intro" data-reveal-group>
+          <h2>Two horizons, two different worlds</h2>
+          <p>The same Sun behaves very differently depending on where you stand. Watch one lunar day, sped up, at two places.</p>
+        </div>
+        <div class="skies" data-reveal-group>
+          <figure class="sky">
+            <svg viewBox="0 0 600 300" role="img" aria-label="Animation: at the Moon’s equator the Sun rises, climbs high, sets and then stays below the horizon for about two weeks while Earth stays almost still above" data-sky="equator">
+              <defs><radialGradient id="glow-equator"><stop offset="0" stop-color="#ffd36b" stop-opacity=".85"/><stop offset="1" stop-color="#ffd36b" stop-opacity="0"/></radialGradient></defs>
+              <rect width="600" height="300" fill="#05060d"/>
+              <g fill="#fff" opacity=".7"><circle cx="40" cy="40" r="1.2"/><circle cx="120" cy="90" r="1"/><circle cx="210" cy="30" r="1.4"/><circle cx="330" cy="70" r="1"/><circle cx="470" cy="35" r="1.3"/><circle cx="560" cy="95" r="1"/><circle cx="80" cy="150" r="1"/><circle cx="520" cy="160" r="1.2"/><circle cx="260" cy="120" r="1"/><circle cx="400" cy="20" r="1"/></g>
+      <g class="earth" transform="translate(300 62)"><circle r="15" fill="#3350ff"/><path d="M-9-3q6-8 14-3M-6 5q7 3 12-2" stroke="#fff" stroke-opacity=".55" stroke-width="2" fill="none" stroke-linecap="round"/></g>
+      <g class="sun" transform="translate(142 94)"><circle r="46" fill="url(#glow-equator)"/><circle r="13" fill="#ffe29a"/></g>
+      <path d="M0 240H600V300H0Z" fill="#151515"/><path d="M0 240H600" stroke="#fff" stroke-opacity=".3" stroke-width="2"/>
+            </svg>
+            <figcaption><h3>At the equator</h3><p>The Sun climbs high, crosses the sky and sets, then stays gone for about two weeks. Earth, on the near side, hardly moves.</p><p class="sky__note">Time is sped up: each loop is one lunar day.</p></figcaption>
+          </figure>
+          <figure class="sky">
+            <svg viewBox="0 0 600 300" role="img" aria-label="Animation: near the Moon’s south pole the Sun slides along the horizon, passing behind hills, while Earth sits low and is partly hidden by a ridge" data-sky="pole">
+              <defs><radialGradient id="glow-pole"><stop offset="0" stop-color="#ffd36b" stop-opacity=".85"/><stop offset="1" stop-color="#ffd36b" stop-opacity="0"/></radialGradient></defs>
+              <rect width="600" height="300" fill="#05060d"/>
+              <g fill="#fff" opacity=".7"><circle cx="40" cy="40" r="1.2"/><circle cx="120" cy="90" r="1"/><circle cx="210" cy="30" r="1.4"/><circle cx="330" cy="70" r="1"/><circle cx="470" cy="35" r="1.3"/><circle cx="560" cy="95" r="1"/><circle cx="80" cy="150" r="1"/><circle cx="520" cy="160" r="1.2"/><circle cx="260" cy="120" r="1"/><circle cx="400" cy="20" r="1"/></g>
+      <g class="earth" transform="translate(405 206)"><circle r="15" fill="#3350ff"/><path d="M-9-3q6-8 14-3M-6 5q7 3 12-2" stroke="#fff" stroke-opacity=".55" stroke-width="2" fill="none" stroke-linecap="round"/></g>
+      <g class="sun" transform="translate(190 214)"><circle r="46" fill="url(#glow-pole)"/><circle r="13" fill="#ffe29a"/></g>
+      <path d="M0 300V232L60 222L110 236L170 216L230 232L300 226L370 198L430 228L500 214L560 234L600 224V300Z" fill="#151515" stroke="#fff" stroke-opacity=".3" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+            <figcaption><h3>Near the south pole</h3><p>The Sun never climbs much more than a degree or so above the horizon. It circles slowly, hills hide it for a while, and every shadow is very long.</p><p class="sky__note">Same time scale. This is why the exact site and date matter so much.</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="history">
+      <div class="container">
+        <div class="intro" data-reveal-group>
+          <h2>Landings so far</h2>
+          <p>From the first robot to the first footprints, and on to a crowded south pole.</p>
+        </div>
+        <ol class="timeline" data-reveal-group>
+          <li><time>Feb 1966</time><div><h3>Luna 9</h3><p>The Soviet Union’s probe made the first soft landing on the Moon and sent back the first pictures from the surface.</p></div></li>
+          <li><time>1966 – 1968</time><div><h3>Surveyor</h3><p>Five NASA landers scouted the ground and tested how firm it was, so Apollo knew a spacecraft would not sink.</p></div></li>
+          <li class="has-photo"><time>Jul 1969</time><div><h3>Apollo 11</h3><p>Neil Armstrong and Buzz Aldrin landed in the Sea of Tranquility, the first people on the Moon. LRO has since photographed the site from orbit, and the lander’s descent stage is easy to spot.</p></div><figure><img src="assets/photos/pia12909.jpg" alt="Orbital view of the Apollo 11 landing site with the Eagle descent stage and nearby craters labelled" width="800" height="800" loading="lazy"><figcaption>NASA / LRO · Apollo 11 site</figcaption></figure></li>
+          <li class="has-photo"><time>Nov 1969</time><div><h3>Apollo 12</h3><p>The crew landed within walking distance of Surveyor 3, about 180 metres away, proving a pinpoint landing was possible. They brought back parts of the old probe.</p></div><figure><img src="assets/photos/as12-48-7133.jpg" alt="Apollo 12 astronaut beside the Surveyor 3 lander, with the Apollo lander on the horizon" width="1600" height="1600" loading="lazy"><figcaption>NASA · Apollo 12</figcaption></figure></li>
+          <li class="has-photo"><time>Dec 1972</time><div><h3>Apollo 17</h3><p>The last crewed landing, in the Taurus-Littrow valley. Harrison Schmitt, the only professional geologist to walk on the Moon, studied this split boulder. In all, twelve people walked on the Moon and brought back about 382 kg of rock and soil.</p></div><figure><img src="assets/photos/as17-140-21496.jpg" alt="Astronaut Harrison Schmitt standing beside a large split boulder in the Taurus-Littrow valley" width="1544" height="1600" loading="lazy"><figcaption>NASA · Apollo 17</figcaption></figure></li>
+          <li><time>2013 – 2019</time><div><h3>China’s Chang’e missions</h3><p>Chang’e 3 made the first soft landing in almost four decades. In January 2019 Chang’e 4 became the first to land on the far side, talking to Earth through a relay satellite.</p></div></li>
+          <li><time>2023 – 2025</time><div><h3>A new wave of landers</h3><p>India’s Chandrayaan-3 landed near the south pole in August 2023, and Japan’s SLIM made a precision landing in January 2024. Commercial landers followed: Intuitive Machines’ Odysseus in February 2024 and Firefly’s Blue Ghost in March 2025. Next come the Artemis landings, aimed at the south pole.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta__bg"></div>
+      <div class="container cta__inner" data-reveal-group>
+        <div>
+          <h2>Where would you land?</h2>
+          <p>MOONbound compares sites and dates by the sunlight and Earth views they get. See the NASA data behind it.</p>
+        </div>
+        <a href="about.html#data" class="btn">How we use NASA data <i data-lucide="arrow-right" class="icon"></i></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner" data-reveal-group>
+      <div class="footer__brand">
+        <img src="assets/logo.svg" alt="MOONbound" width="180" height="26">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dictum risus ac eros semper, vitae vehicula urna semper.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#difference">Our Difference</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="landing.html">Lunar Landing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <a href="#" class="btn btn--sm">Watch Demo <i data-lucide="arrow-right" class="icon"></i></a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

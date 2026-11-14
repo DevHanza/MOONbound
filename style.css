@@ -109,6 +109,19 @@ h2 { font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.25; }
 .menu-open .menu__list li:nth-child(5) a { transition-delay: 0.35s, 0.35s, 0s; }
 .menu__list a:hover { color: var(--black); }
 
+/* Desktop: the links sit in the bar; the full-screen menu and its button are phone/tablet only */
+.nav__links { display: none; }
+@media (min-width: 901px) {
+  .nav__toggle, .menu { display: none; }
+  .nav__links { display: block; margin-left: auto; }
+  .nav__links ul { display: flex; gap: 2.5rem; }
+  .nav__links a { position: relative; padding: 0.5rem 0; font-size: 0.9375rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); transition: color 0.2s; }
+  .nav__links a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background: var(--white); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease); }
+  .nav__links a:hover, .nav__links a[aria-current] { color: var(--white); }
+  .nav__links a[aria-current] { font-weight: 700; }
+  .nav__links a:hover::after, .nav__links a[aria-current]::after { transform: scaleX(1); }
+}
+
 /* ---------- Hero ---------- */
 .hero { position: relative; min-height: max(100svh, 40rem); display: flex; align-items: center; overflow: hidden; }
 .hero__bg { position: absolute; inset: 0; }
@@ -137,8 +150,9 @@ h2 { font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.25; }
 .split__text p { color: rgba(255, 255, 255, 0.9); }
 
 /* Placeholder box from the design: replace with an <img> or <video> inside .media */
-.media { aspect-ratio: 558 / 500; border-radius: 24px; background: #d9d9d9; overflow: hidden; }
-.media > * { width: 100%; height: 100%; object-fit: cover; }
+.media { position: relative; aspect-ratio: 558 / 500; border-radius: 24px; background: #d9d9d9; overflow: hidden; }
+.media > img { width: 100%; height: 100%; object-fit: cover; }
+.media__credit { position: absolute; left: 1rem; bottom: 0.75rem; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255, 255, 255, 0.9); text-shadow: 0 1px 6px #000; }
 
 /* ---------- Cards ---------- */
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1.5rem; }
@@ -191,6 +205,9 @@ h2 { font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.25; }
 .stats > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; }
 
 .sources { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); gap: 1.5rem; }
+/* three cards in one row on wide screens, stacked below that */
+@media (min-width: 1101px) { .sources--three { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 1100px) { .sources--three { grid-template-columns: 1fr; } }
 .source { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 15px; transition: border-color 0.3s, box-shadow 0.4s; }
 .source:hover { border-color: var(--blue); box-shadow: 0 20px 60px -25px rgba(51, 80, 255, 0.7); }
 .source header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 0.75rem; }
@@ -219,6 +236,32 @@ dl.box > div { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; }
 .box h3 { margin: 1.75rem 0 0.75rem; font: 700 1.125rem var(--display); text-transform: uppercase; }
 .box h3:first-child { margin-top: 0; }
 .box p { color: var(--muted); }
+
+/* ---------- Lunar landing page ---------- */
+.facts { width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 0.75rem 0 0; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.2); }
+.facts > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 0.5rem; }
+.facts dd { margin: 0; font: 700 1.75rem/1 var(--display); color: var(--blue-soft); font-variant-numeric: tabular-nums; }
+.facts dd span { color: var(--white); }
+.facts dt { font-size: 0.875rem; line-height: 1.35; color: var(--muted); }
+
+.skies { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.sky { margin: 0; overflow: hidden; border-radius: 16px; background: var(--panel); }
+.sky svg { width: 100%; height: auto; }
+.sky figcaption { display: grid; gap: 0.5rem; padding: 1.25rem 1.5rem 1.5rem; }
+.sky h3 { font: 700 1.5rem var(--display); text-transform: uppercase; }
+.sky p { font-size: 1.0625rem; color: var(--muted); }
+.sky .sky__note { font-size: 0.875rem; color: var(--blue-soft); }
+
+.timeline { margin: 0 0 0 0.5rem; border-left: 2px solid rgba(255, 255, 255, 0.2); }
+.timeline li { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 24rem); gap: 0.5rem 2.5rem; padding: 0 0 3.5rem 2.25rem; }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before { content: ""; position: absolute; left: -9px; top: 0.35rem; width: 16px; height: 16px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 5px #000, 0 0 24px 2px rgba(51, 80, 255, 0.7); }
+.timeline time { grid-column: 1 / -1; font: 600 0.9375rem var(--display); letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-soft); }
+.timeline h3 { margin-bottom: 0.5rem; font: 600 1.75rem/1.2 var(--display); }
+.timeline p { max-width: 40rem; color: var(--muted); }
+.timeline figure { grid-column: 2; grid-row: 2; margin: 0; }
+.timeline figure img { width: 100%; height: auto; max-height: 22rem; object-fit: cover; border-radius: 16px; }
+.timeline figcaption { margin-top: 0.5rem; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); }
 
 /* ---------- CTA ---------- */
 .cta { position: relative; overflow: hidden; border-top: 2px solid rgba(255, 255, 255, 0.25); padding: 8rem 0 15rem; }
@@ -250,7 +293,9 @@ dl.box > div { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; }
   body { font-size: 1.0625rem; }
   .section { padding: 4rem 0; }
   .section__head { margin-bottom: 2.5rem; }
-  .split__inner, .compare, .credits { grid-template-columns: 1fr; }
+  .split__inner, .compare, .credits, .skies { grid-template-columns: 1fr; }
+  .timeline li { grid-template-columns: 1fr; }
+  .timeline figure { grid-column: 1; grid-row: auto; max-width: 28rem; margin-top: 0.75rem; }
   .team { grid-template-columns: repeat(2, 1fr); }
   .split__inner { gap: 2.5rem; }
   .split--reverse .media { order: -1; }
@@ -284,6 +329,9 @@ dl.box > div { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; }
   .panel { padding: 1.5rem 1.25rem; }
   dl.box > div { grid-template-columns: 1fr; gap: 0.25rem; }
   .intro { margin-bottom: 2.5rem; }
+  .facts { grid-template-columns: 1fr; gap: 1.25rem; }
+  .timeline li { padding-left: 1.75rem; }
+  .timeline h3 { font-size: 1.5rem; }
   .stats { gap: 1.75rem; margin-bottom: 2.5rem; }
   .panel h3 { font-size: 1.375rem; }
   .panel li { font-size: 1rem; gap: 0.75rem; }
