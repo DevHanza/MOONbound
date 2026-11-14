@@ -60,8 +60,10 @@ if (window.gsap && window.ScrollTrigger) {
     });
 
     // Play each time the element scrolls into view; rewind only once it is fully off screen.
+    // Phones show less of the page at once, so start the reveal as soon as the element peeks in.
+    const revealStart = matchMedia("(max-width: 900px)").matches ? "top 98%" : "top 85%";
     const replay = (tween, trigger) => {
-      ScrollTrigger.create({ trigger, start: "top 85%", end: "bottom top", onEnter: () => tween.play(), onEnterBack: () => tween.play() });
+      ScrollTrigger.create({ trigger, start: revealStart, end: "bottom top", onEnter: () => tween.play(), onEnterBack: () => tween.play() });
       ScrollTrigger.create({ trigger, start: "top bottom", end: "bottom top", onLeave: () => tween.pause(0), onLeaveBack: () => tween.pause(0) });
     };
 

@@ -63,6 +63,8 @@ h2 { font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.25; }
 .btn .icon { transition: transform 0.3s var(--ease); }
 .btn:hover { background: var(--blue); color: var(--white); translate: 0 -2px; }
 .btn:hover .icon { transform: translateX(5px); }
+.btn--blue { background: var(--blue); color: var(--white); }
+.btn--blue:hover { background: var(--white); color: var(--black); }
 .btn--lg { height: 4.25rem; padding: 0 2.75rem; font-size: 1.5rem; }
 .btn--sm { height: 2.625rem; padding: 0 1.5rem; font-size: 0.9375rem; }
 
@@ -134,6 +136,7 @@ h2 { font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.25; }
 .hero__title .line { display: block; overflow: hidden; padding-bottom: 0.05em; }
 .hero__title .line > span { display: block; }
 .hero__sub { max-width: 44rem; margin-top: 1.75rem; font-size: clamp(1.25rem, 2.2vw, 2rem); }
+.hero__btns { display: flex; flex-wrap: wrap; gap: 1rem; }
 .hero__actions { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; margin-top: 4.5rem; }
 .hero__scroll { display: inline-flex; align-items: center; gap: 0.6rem; text-transform: uppercase; }
 .hero__scroll .icon { animation: bob 1.6s ease-in-out infinite; }
@@ -221,6 +224,7 @@ h2 { font-size: clamp(1.75rem, 3.4vw, 3rem); line-height: 1.25; }
 .source__from { font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--blue-soft); }
 .source > p:not(.source__from) { font-size: 1.0625rem; color: var(--muted); }
 .source .chips { margin-top: auto; padding-top: 0.75rem; }
+.source > .btn { margin-top: auto; align-self: flex-start; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .chips li { padding: 0.3rem 0.8rem; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 99px; font-size: 0.8125rem; color: rgba(255, 255, 255, 0.9); }
@@ -352,6 +356,7 @@ dl.box > div { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; }
   .hero__eyebrow { font-size: 0.875rem; margin-bottom: 1.25rem; }
   .hero__sub { margin-top: 1.25rem; font-size: 1.125rem; }
   .hero__actions { flex-direction: column; align-items: stretch; gap: 1.75rem; margin-top: 2.5rem; }
+  .hero__btns { flex-direction: column; gap: 0.75rem; }
   .hero__scroll { justify-content: center; font-size: 0.875rem; letter-spacing: 0.08em; }
   .btn--lg { height: 3.5rem; font-size: 1.125rem; justify-content: center; }
 
