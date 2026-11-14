@@ -108,6 +108,14 @@ if (window.gsap && window.ScrollTrigger) {
       ScrollTrigger.create({ trigger: svg, start: "top bottom", end: "bottom top", onToggle: (s) => tween.paused(!s.isActive) });
     });
 
+    // How it works: on wide screens the track fills left to right while scrolling, lighting each step as it arrives.
+    gsap.matchMedia().add("(min-width: 1101px)", () => {
+      const nodes = gsap.utils.toArray(".flow__node");
+      const tl = gsap.timeline({ scrollTrigger: { trigger: ".flow", start: "top 75%", end: "bottom 55%", scrub: 0.6 } });
+      tl.fromTo(".flow", { "--p": 0 }, { "--p": 1, ease: "none", duration: nodes.length - 1 }, 0);
+      nodes.forEach((n, i) => tl.fromTo(n, { backgroundColor: "#262626", scale: 0.8 }, { backgroundColor: "#3350ff", scale: 1, duration: 0.3 }, Math.max(0, i - 0.15)));
+    });
+
     // Horizon rises as the last section scrolls in
     gsap.from(".cta__bg", {
       yPercent: 18, ease: "none",
