@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download — MOONbound</title>
+  <meta name="description" content="Download the MOONbound Lunar Landing Site Navigator for Windows, with step-by-step install instructions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/hero-moon.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="MOONbound home"><img src="assets/logo.svg" alt="MOONbound" width="212" height="30"></a>
+      <nav class="nav__links" aria-label="Main">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="landing.html">Lunar Landing</a></li>
+          <li><a href="difference.html">Our Difference</a></li>
+          <li><a href="download.html" aria-current="page">Download</a></li>
+        </ul>
+      </nav>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="menu" id="menu" aria-label="Main" inert>
+    <ul class="menu__list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="landing.html">Lunar Landing</a></li>
+      <li><a href="difference.html">Our Difference</a></li>
+      <li><a href="download.html" aria-current="page">Download</a></li>
+    </ul>
+  </nav>
+
+  <main id="top">
+
+
+    <section class="hero hero--short">
+      <div class="hero__bg"><img src="assets/hero-moon.jpg" alt="" width="1613" height="1280"></div>
+      <div class="container hero__content">
+        <h1 class="hero__title"><span class="line"><span>Download</span></span></h1>
+        <p class="hero__sub">Get the MOONbound Lunar Landing Site Navigator for Windows.</p>
+      </div>
+    </section>
+
+    <section class="section" id="get">
+      <div class="container">
+        <div class="download" data-reveal-group>
+          <svg class="download__logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 4.5 10 3.4v7.8H2zm9-1.2L22 2v9.2H11zM2 12.2h8V20l-8-1.1zm9 0h11V22l-11-1.5z"/></svg>
+          <div class="download__text">
+            <h2>MOONbound for Windows</h2>
+            <ul class="chips"><li>Windows 10 / 11, 64-bit</li><li>.zip archive</li><li>Internet required</li><li>Hosted on MEGA</li></ul>
+          </div>
+          <div class="download__action">
+            <a href="#requirements" class="download__req"><i data-lucide="list-checks" class="icon"></i> Check the system requirements</a>
+            <a href="https://mega.nz/file/7nhhiIIC#zWM1GGQwo_PkeKIwZaw3skMc7TOyMfbVuPSPNdkWpJU" class="btn btn--lg btn--blue" target="_blank" rel="noopener">Download for Windows <i data-lucide="download" class="icon"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="install">
+      <div class="container">
+        <div class="intro" data-reveal-group>
+          <h2>How to install</h2>
+          <p>Four steps. Update your graphics driver first for the best results.</p>
+        </div>
+        <div class="flow">
+          <div class="flow__track" aria-hidden="true"><span></span></div>
+          <ol class="flow__steps" data-reveal-group>
+          <li class="flow__step">
+            <span class="flow__node"><i data-lucide="download" class="icon"></i></span>
+            <span class="flow__no">Step 01</span>
+            <h3>Download the zip</h3>
+            <p>Click <strong>Download for Windows</strong>. MEGA opens in a new tab; click its <strong>Download</strong> button and save the <code>.zip</code> file.</p>
+          </li>
+          <li class="flow__step">
+            <span class="flow__node"><i data-lucide="file-archive" class="icon"></i></span>
+            <span class="flow__no">Step 02</span>
+            <h3>Extract the zip</h3>
+            <p>Right-click the downloaded file, choose <strong>Extract All…</strong>, then <strong>Extract</strong>.</p>
+          </li>
+          <li class="flow__step">
+            <span class="flow__node"><i data-lucide="cpu" class="icon"></i></span>
+            <span class="flow__no">Step 03</span>
+            <h3>Install the runtime</h3>
+            <p>In <code>package1.0</code> › <code>windows</code>, run <code>Engine/Extras/Redist/en-us/vc_redist.x64.exe</code> once. It installs the Visual C++ runtime the app needs.</p>
+          </li>
+          <li class="flow__step">
+            <span class="flow__node"><i data-lucide="mouse-pointer-click" class="icon"></i></span>
+            <span class="flow__no">Step 04</span>
+            <h3>Run MOONbound</h3>
+            <p>In the same folder, double-click <code>NASA_Moon.exe</code>. If Windows Firewall asks, allow internet access: the Moon’s terrain is streamed online.</p>
+          </li>
+          </ol>
+        </div>
+        <div class="trust" data-reveal-group>
+          <p class="trust__title">Good to know</p>
+          <ul>
+            <li><span class="mark"><i data-lucide="shield" class="icon"></i></span><span>If Windows shows “Windows protected your PC”, click <strong>More info</strong>, then <strong>Run anyway</strong>. It appears because the app isn’t code-signed.</span></li>
+            <li><span class="mark"><i data-lucide="folder" class="icon"></i></span><span>Keep the whole <code>windows</code> folder together. Don’t move <code>NASA_Moon.exe</code> out on its own.</span></li>
+            <li><span class="mark"><i data-lucide="wifi" class="icon"></i></span><span>Stay online while using it. The lunar terrain is streamed, so a slow connection means a blurry surface.</span></li>
+            <li><span class="mark"><i data-lucide="circle-slash" class="icon"></i></span><span>Not supported: macOS, Linux, ARM-based Windows, and Windows 7 or 8.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="requirements">
+      <div class="container">
+        <div class="intro" data-reveal-group>
+          <h2>System requirements</h2>
+          <p>MOONbound is built with Unreal Engine 5 and Cesium, so it needs a capable graphics card.</p>
+        </div>
+        <div class="specs" data-reveal>
+          <table>
+            <thead><tr><th scope="col"><span class="visually-hidden">Component</span></th><th scope="col">Minimum</th><th scope="col">Recommended</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">OS</th><td>Windows 10 64-bit (1909 or newer)</td><td>Windows 11 64-bit</td></tr>
+              <tr><th scope="row">Processor</th><td>4 cores / 8 threads, e.g. Intel Core i5-8400, AMD Ryzen 5 2600</td><td>6–8 cores, e.g. Intel Core i7-10700, AMD Ryzen 5 5600X</td></tr>
+              <tr><th scope="row">Memory</th><td>8 GB</td><td>16 GB</td></tr>
+              <tr><th scope="row">Graphics</th><td>DirectX 12, 4 GB VRAM, e.g. NVIDIA GTX 1060, AMD RX 570, Intel Arc A380</td><td>8 GB+ VRAM, e.g. NVIDIA RTX 3060, AMD RX 6700 XT, Intel Arc A770</td></tr>
+              <tr><th scope="row">Storage</th><td>2 GB free (SSD preferred)</td><td>5 GB free on an NVMe SSD</td></tr>
+              <tr><th scope="row">Internet</th><td>Broadband, about 10 Mbps</td><td>50 Mbps or faster</td></tr>
+              <tr><th scope="row">Software</th><td>Visual C++ 2015–2022 runtime (x64), current GPU driver</td><td>Same, with the latest GPU driver</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="specs__note">These figures are estimates based on typical Unreal Engine 5 requirements, not measured on test machines.</p>
+        <div class="fixes" data-reveal-group>
+          <h3>Troubleshooting</h3>
+          <details><summary>The app won’t start or says a DLL is missing</summary><p>Run <code>vc_redist.x64.exe</code> (step 3).</p></details>
+          <details><summary>“DirectX 12 is not supported”</summary><p>Your graphics card or driver is below the minimum. Update the driver, or use a supported card.</p></details>
+          <details><summary>The Moon’s surface is missing or blurry</summary><p>Check your internet connection. The terrain is streamed online.</p></details>
+          <details><summary>Low frame rate</summary><p>Lower the display resolution, and make sure the dedicated graphics card is in use, not integrated graphics.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta__bg"></div>
+      <div class="container cta__inner" data-reveal-group>
+        <div>
+          <h2>Not on Windows?</h2>
+          <p>Watch the demo to see the Navigator in action.</p>
+        </div>
+        <a href="https://www.youtube.com/watch?v=hbgBwMeM6Io" data-demo class="btn">Watch Demo <i data-lucide="arrow-right" class="icon"></i></a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner" data-reveal-group>
+      <div class="footer__brand">
+        <img src="assets/logo.svg" alt="MOONbound" width="180" height="26">
+        <p>Compare lunar landing sites and dates by sunlight and Earth visibility. Built by the Bon Voyage team for the NASA Space Apps Challenge.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="difference.html">Our Difference</a></li>
+          <li><a href="download.html">Download</a></li>
+          <li><a href="index.html#features">How it works</a></li>
+          <li><a href="landing.html">Lunar Landing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <a href="https://www.youtube.com/watch?v=hbgBwMeM6Io" data-demo class="btn btn--sm">Watch Demo <i data-lucide="arrow-right" class="icon"></i></a>
+        <p>Watch a short tour of the Navigator.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

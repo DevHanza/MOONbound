@@ -333,6 +333,32 @@ dl.box > div { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; }
 .video__close { position: absolute; top: -3rem; right: 0; width: 2.5rem; height: 2.5rem; border: 0; border-radius: 50%; background: var(--white); color: var(--black); font-size: 1.75rem; line-height: 1; cursor: pointer; }
 .video__close:hover { background: var(--blue); color: var(--white); }
 
+/* ---------- Download page ---------- */
+.download { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 2.5rem; padding: 2.5rem; border: 2px solid rgba(255, 255, 255, 0.15); border-radius: 16px; background: var(--panel); }
+.download__logo { width: 72px; height: 72px; flex: none; color: var(--blue-soft); }
+.download__text { flex: 1; min-width: 14rem; display: grid; gap: 0.75rem; }
+.download__text h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+.download__action { display: grid; justify-items: center; gap: 0.75rem; }
+.download__req { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9375rem; color: var(--blue-soft); text-decoration: underline; text-underline-offset: 3px; }
+.download__req:hover { color: var(--white); }
+#install .flow { margin-top: 3rem; }
+.specs { margin-top: 3rem; overflow-x: auto; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 16px; }
+.specs table { width: 100%; min-width: 40rem; border-collapse: collapse; font-size: 1rem; }
+.specs th, .specs td { padding: 1rem 1.25rem; text-align: left; vertical-align: top; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.specs tbody tr:last-child > * { border-bottom: 0; }
+.specs thead th { font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.875rem; background: var(--panel); }
+.specs thead th:last-child { color: var(--blue-soft); }
+.specs tbody th { width: 9rem; font-weight: 600; }
+.specs td { color: var(--muted); }
+.specs__note { margin-top: 0.75rem; font-size: 0.875rem; color: var(--muted); }
+.fixes { margin-top: 3.5rem; display: grid; gap: 1rem; }
+.fixes h3 { font: 600 1.5rem var(--display); }
+.fixes details p { margin-top: 0.5rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.trust li > span:last-child { flex: 1; }
+@media (max-width: 600px) { .download { padding: 1.5rem; } .download__action, .download .btn { width: 100%; justify-content: center; } }
+
 /* ---------- Smaller screens ---------- */
 @media (max-width: 900px) {
   body { font-size: 1.0625rem; }
