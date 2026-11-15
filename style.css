@@ -359,6 +359,28 @@ dl.box > div { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; }
 .trust li > span:last-child { flex: 1; }
 @media (max-width: 600px) { .download { padding: 1.5rem; } .download__action, .download .btn { width: 100%; justify-content: center; } }
 
+/* ---------- Comic astronauts: one per page, each attached to something ---------- */
+.btn--blue, .panel--ours, .source, .download { position: relative; }
+.astro { position: absolute; z-index: 2; height: auto; pointer-events: none; user-select: none; }
+/* home: dangles from the Try it out button by one hand, and swings faster when you hover the button */
+.astro--hang { top: calc(100% - 8px); left: 68%; width: 64px; margin-left: -34px; transform-origin: 52.5% 5.6%; animation: astro-swing 2.6s ease-in-out infinite alternate; }
+.btn:hover .astro--hang { animation-duration: 0.7s; }
+@keyframes astro-swing { from { rotate: -8deg; } to { rotate: 8deg; } }
+/* about: drifts across the hero */
+.astro--float { top: 26%; right: 9%; width: clamp(110px, 15vw, 220px); animation: astro-drift 9s ease-in-out infinite alternate; }
+@keyframes astro-drift { from { translate: 0 -10px; rotate: -6deg; } to { translate: -24px 16px; rotate: 8deg; } }
+/* download: sits on the card's top edge, legs dangling (37px of the image is below the seat) */
+.astro--sit { bottom: calc(100% - 37px); right: 3rem; width: 96px; }
+/* landing: plants a flag on top of "The ground" card */
+.astro--flag { bottom: calc(100% - 5px); right: 1.25rem; width: 100px; }
+/* difference: pops up from behind the "Our Lunar Navigator" panel */
+.astro-peek { position: absolute; bottom: 100%; right: 2rem; width: 92px; overflow: hidden; line-height: 0; pointer-events: none; }
+.astro-peek img { display: block; width: 100%; height: auto; animation: astro-peek 7s ease-in-out infinite; }
+@keyframes astro-peek { 0%, 12% { translate: 0 100%; } 22%, 78% { translate: 0 0; } 90%, 100% { translate: 0 100%; } }
+@media (max-width: 1100px) { .astro--flag { display: none; } } /* cards stack there, so it would cover the card above */
+@media (max-width: 900px) { .astro--hang { left: auto; right: 1.25rem; width: 46px; margin: 0; } }
+@media (max-width: 600px) { .astro--sit { bottom: calc(100% - 28px); right: 1.25rem; width: 72px; } .astro--float { top: 20%; right: 6%; width: 96px; } }
+
 /* ---------- Smaller screens ---------- */
 @media (max-width: 900px) {
   body { font-size: 1.0625rem; }
