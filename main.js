@@ -22,6 +22,28 @@ const onScroll = () => nav.classList.toggle("is-scrolled", scrollY > 40);
 addEventListener("scroll", onScroll, { passive: true });
 onScroll();
 
+// Watch Demo: play the YouTube video in a pop-up. Without JS the links still open YouTube.
+const demoLinks = document.querySelectorAll("[data-demo]");
+if (demoLinks.length && window.HTMLDialogElement) {
+  const dialog = document.createElement("dialog");
+  dialog.className = "video";
+  dialog.setAttribute("aria-label", "MOONbound demo video");
+  dialog.innerHTML = '<button class="video__close" aria-label="Close video">&times;</button><div class="video__frame"></div>';
+  document.body.append(dialog);
+  const frame = dialog.querySelector(".video__frame");
+  // YouTube refuses to play (error 153) when the embed sends no referrer, e.g. from file:// pages.
+  // Removing the iframe on close is what stops the sound.
+  dialog.addEventListener("close", () => (frame.innerHTML = ""));
+  dialog.querySelector(".video__close").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (e) => e.target === dialog && dialog.close()); // click on the dark backdrop
+  demoLinks.forEach((a) => a.addEventListener("click", (e) => {
+    e.preventDefault();
+    const id = new URL(a.href).searchParams.get("v");
+    frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0" title="MOONbound demo video" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    dialog.showModal();
+  }));
+}
+
 // Animations: only when GSAP loaded and the visitor has not asked for reduced motion.
 if (window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);

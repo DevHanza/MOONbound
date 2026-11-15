@@ -323,6 +323,16 @@ dl.box > div { display: grid; grid-template-columns: 8rem 1fr; gap: 1rem; }
   .trust { margin-top: 3rem; padding: 1.5rem; }
 }
 
+/* ---------- Demo video pop-up ---------- */
+.video { width: min(1100px, calc(100% - 2rem)); max-width: none; max-height: none; padding: 0; border: 0; border-radius: 16px; background: #000; overflow: visible; }
+.video::backdrop { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(4px); }
+.video[open] { animation: video-in 0.35s var(--ease); }
+@keyframes video-in { from { opacity: 0; scale: 0.94; } }
+.video__frame { aspect-ratio: 16 / 9; overflow: hidden; border-radius: 16px; }
+.video__frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+.video__close { position: absolute; top: -3rem; right: 0; width: 2.5rem; height: 2.5rem; border: 0; border-radius: 50%; background: var(--white); color: var(--black); font-size: 1.75rem; line-height: 1; cursor: pointer; }
+.video__close:hover { background: var(--blue); color: var(--white); }
+
 /* ---------- Smaller screens ---------- */
 @media (max-width: 900px) {
   body { font-size: 1.0625rem; }
